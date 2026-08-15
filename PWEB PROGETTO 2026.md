@@ -112,7 +112,7 @@ La memorizzazione dei dati sensibili della partita seguirà una rigida separazio
 
 ###### **3. Manipolazione del DOM (DOM Level 3 Nativo)**
 
-La generazione dell'interfaccia dinamica del finto sistema operativo non si affiderà a framework esterni o a semplici iniezioni di stringhe HTML vulnerabili.Tecnologia: Si utilizzeranno rigorosamente i metodi standard del DOM Level 3.  Metodi Chiave: Creazione dinamica di nodi tramite document.createElement(), inserimento di testi sicuri tramite document.createTextNode(), e assemblaggio della struttura tramite appendChild().  Gestione Eventi: Le interazioni dell'utente (click sulle app, invio form) saranno gestite unicamente tramite addEventListener(), evitando attributi intrusivi come onclick nell'HTML.
+La generazione dell'interfaccia dinamica del finto sistema operativo non si affiderà a framework esterni o a semplici iniezioni di stringhe HTML vulnerabili. Tecnologia: Si utilizzeranno rigorosamente i metodi standard del DOM Level 3.  Metodi Chiave: Creazione dinamica di nodi tramite document.createElement(), inserimento di testi sicuri tramite document.createTextNode(), e assemblaggio della struttura tramite appendChild(). Gestione Eventi: Le interazioni dell'utente (click sulle app, invio form) saranno gestite unicamente tramite addEventListener(), evitando attributi intrusivi come onclick nell'HTML.
 
 ##### 
 
@@ -120,7 +120,7 @@ La generazione dell'interfaccia dinamica del finto sistema operativo non si affi
 
 
 
-###### **Scelta Architetturale 1: Il Flusso delle Pagine (MPA vs SPA Ibrida)**
+###### **Scelta Architetturale 1: Il Flusso delle Pagine (MPA Ibrida)**
 
 Approccio MPA - Multi-Page ibrida: Due pagine distinte. index.php gestisce solo il manuale e l'accesso. Una volta loggato, l'utente viene reindirizzato a os.php, che è il finto desktop hackerato. Dentro os.php, tutto avviene in modo asincrono senza ricaricare la pagina.
 
@@ -237,12 +237,8 @@ Ora uniamo il frontend al backend. Il gioco prende vita.
 La fase finale dedicata a spuntare tutti i requisiti di valutazione del professore.
 
 1. Classifica Globale: Scrittura di php/classifica.php per estrarre le migliori partite dal DB e visualizzarle alla fine della partita.
-2. Validazione W3C: Passaggio del codice HTML/CSS nei validatori ufficiali. Correzione degli errori o inserimento dei commenti giustificativi (come da specifiche).  
-3. Code Review \& Portabilità: Verifica che non ci siano percorsi assoluti, che i nomi delle variabili siano sostantivi e le funzioni verbi.  
-4. Export DB: Utilizzo rigoroso dello script EsportaDB.bat o EsportaDB.sh fornito dal corso per generare il file .sql finale.  
-5. Test sui Browser Ufficiali: Esecuzione del test funzionale su Firefox e Chrome usando l'ambiente software del corso.  
-
-
-
-
+2. Validazione W3C: Passaggio del codice HTML/CSS nei validatori ufficiali. Correzione degli errori o inserimento dei commenti giustificativi (come da specifiche).
+3. Code Review \& Portabilità: Verifica che non ci siano percorsi assoluti, che i nomi delle variabili siano sostantivi e le funzioni verbi.
+4. Export DB: Utilizzo rigoroso dello script EsportaDB.bat o EsportaDB.sh fornito dal corso per generare il file .sql finale.
+5. Test sui Browser Ufficiali: Esecuzione del test funzionale su Firefox e Chrome usando l'ambiente software del corso.
 
