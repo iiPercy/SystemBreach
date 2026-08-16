@@ -1,4 +1,5 @@
 <?php
+//php/db_config.php
 $host = '127.0.0.1';            
 $db   = 'grazzini_673604';       
 $user = 'root';                  
