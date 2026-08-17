@@ -1,0 +1,108 @@
+/* css/desktop.css */
+
+body#os-body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: #050505;
+    background-image: 
+        linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+#hud-top {
+    text-align: center;
+    padding: 15px 0;
+    background: linear-gradient(180deg, rgba(255, 0, 60, 0.1) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+    z-index: 1000; /* Sta sempre sopra a tutto */
+}
+
+.warning-text {
+    color: #ff003c;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+#timer-display {
+    color: #ff003c;
+    font-size: 4.5rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    text-shadow: 0 0 20px rgba(255, 0, 60, 0.8);
+    font-family: inherit;
+}
+
+#desktop-area {
+    flex-grow: 1; 
+    position: relative;
+    display: flex;
+}
+
+#icon-dock {
+    width: 120px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-right: 1px solid rgba(0, 255, 65, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.os-icon {
+    background: transparent;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1);
+}
+
+.os-icon:hover {
+    background-color: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+    transform: scale(1.05);
+}
+
+.icon-symbol {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.icon-label {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.terminal-icon {
+    border-color: #00f3ff;
+    color: #00f3ff;
+    box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.1);
+    margin-top: auto; /* La spinge in fondo alla barra */
+}
+
+.terminal-icon:hover {
+    background-color: rgba(0, 243, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+}
+
+.sys-window {
+    position: absolute;
+    width: 400px;
+    min-height: 250px;
+    background-color: rgba(10, 10, 10, 0.95);
+    border: 1px solid #00ff41;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 255, 65, 0.2);
+    display: flex;
+    flex-direction: column;
+}

@@ -1,7 +1,7 @@
 <?php
+// index.php
 session_start();
 
-// Se l'utente è già loggato viene reindirizzato ad os.php
 if (isset($_SESSION['user_id'])) {
     header("Location: os.php");
     exit; 
@@ -19,7 +19,6 @@ if (isset($_SESSION['user_id'])) {
 
     <main id="auth-container">
         
-        <!-- SEZIONE 1: MANUALE UTENTE -->
         <section id="manuale-emergenza">
             <h1>Manuale Operativo di Emergenza</h1>
             <article>
@@ -32,7 +31,6 @@ if (isset($_SESSION['user_id'])) {
             </article>
         </section>
 
-        <!-- SEZIONE 2: FORM DI AUTENTICAZIONE -->
         <section id="form-section">
             <h2>Autenticazione Sistema</h2>
             
