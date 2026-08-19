@@ -27,7 +27,6 @@ if (!isset($_SESSION['user_id'])) {
     <main id="desktop-area">
         
         <aside id="icon-dock">
-
             <button class="os-icon" data-app="mail">
                 <span class="icon-symbol">✉</span>
                 <span class="icon-label">MAIL.ENC</span>
@@ -41,6 +40,16 @@ if (!isset($_SESSION['user_id'])) {
             <button class="os-icon" data-app="appunti">
                 <span class="icon-symbol">⚿</span>
                 <span class="icon-label">NOTES</span>
+            </button>
+
+            <button class="os-icon" data-app="trash">
+                <span class="icon-symbol">♺</span>
+                <span class="icon-label">TRASH.BIN</span>
+            </button>
+
+            <button class="os-icon" data-app="config">
+                <span class="icon-symbol">⚙</span>
+                <span class="icon-label">CONFIG</span>
             </button>
             
             <button class="os-icon terminal-icon" data-app="terminal">
