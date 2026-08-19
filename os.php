@@ -62,8 +62,8 @@ if (!isset($_SESSION['user_id'])) {
 
     </main>
 
-
     <script src="js/timer.js"></script>
+    <script src="js/drag_drop.js"></script>
     <script src="js/ui_manager.js"></script>
     <script src="js/game_core.js"></script>
     <script src="js/terminal.js"></script>

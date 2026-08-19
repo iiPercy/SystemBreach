@@ -50,6 +50,7 @@ function creaFinestraBase(appId, titoloApp) {
     header.appendChild(controlli);
     finestra.appendChild(header);
     finestra.appendChild(contenuto);
+    abilitaTrascinamento(finestra, header);
 
     //GESTIONE EVENTI DEI BOTTONI
     btnChiudi.addEventListener('click', () => {

@@ -90,8 +90,6 @@ L'utente trova la password di root, ma è cifrata (es. una stringa incomprensibi
 
 La password è una stringa alfanumerica divisa in 4 frammenti (es. Alfa, X7, 99, Beta). Ogni frammento è nascosto in una finestra diversa, accompagnato da un timestamp o da una data di sistema (es. "Ore 10:15 - Chiave 1: Alfa"). L'utente deve riordinare i frammenti cronologicamente per ottenere la password completa (AlfaX799Beta).
 
-
-
 ##### 
 
 ##### **2. Scelte Progettuali, Trade-off e Gestione No-Framework**
@@ -100,13 +98,13 @@ La password è una stringa alfanumerica divisa in 4 frammenti (es. Alfa, X7, 99,
 
 ###### **1. Comunicazione Client-Server (Fetch API e JSON)**
 
-L'interazione tra frontend e backend avverrà in modo completamente asincrono, evitando ricaricamenti della pagina per garantire un'esperienza utente fluida (Single Page Application).Tecnologia: Utilizzo della moderna API fetch nativa di JavaScript, supportata dalla sintassi async/await e con gestione degli errori tramite try/catch.  Scambio Dati: Il formato di interscambio dati sarà esclusivamente JSON. Il server PHP risponderà alle richieste codificando array associativi tramite json\_encode() e impostando l'header Content-type: application/json. Il client decodificherà la risposta tramite il metodo await response.json().  Sicurezza: Il client invierà richieste (es. verifica password) e riceverà solo i dati da mostrare a schermo, senza mai ricevere la logica risolutiva.
+L'interazione tra frontend e backend avverrà in modo completamente asincrono, evitando ricaricamenti della pagina per garantire un'esperienza utente fluida (Single Page Application).Tecnologia: Utilizzo della moderna API fetch nativa di JavaScript, supportata dalla sintassi async/await e con gestione degli errori tramite try/catch. Scambio Dati: Il formato di interscambio dati sarà esclusivamente JSON. Il server PHP risponderà alle richieste codificando array associativi tramite json\_encode() e impostando l'header Content-type: application/json. Il client decodificherà la risposta tramite il metodo await response.json().  Sicurezza: Il client invierà richieste (es. verifica password) e riceverà solo i dati da mostrare a schermo, senza mai ricevere la logica risolutiva.
 
 
 
 ###### **2. Gestione dello Stato e Sicurezza (Approccio Trust-No-Client)**
 
-La memorizzazione dei dati sensibili della partita seguirà una rigida separazione per prevenire manomissioni lato client e rispettare i vincoli sulle variabili globali.Stato Server (PHP Sessions): L'identificazione dell'utente e la memorizzazione della soluzione generata proceduralmente (la password di root) avverranno tramite la variabile superglobale $\_SESSION. Questo richiede l'uso di session\_start() all'inizio di ogni script PHP coinvolto. Solo il server deciderà le condizioni di vittoria confrontando l'input dell'utente con il dato in sessione.  Stato Client (Vanilla JS): Per mantenere in memoria lo stato dell'interfaccia (es. tempo rimanente del timer, finestre aperte) rispettando il vincolo del minor numero possibile di variabili globali, si utilizzeranno moduli JavaScript (ES6) o chiusure (Closures / IIFE).
+La memorizzazione dei dati sensibili della partita seguirà una rigida separazione per prevenire manomissioni lato client e rispettare i vincoli sulle variabili globali. Stato Server (PHP Sessions): L'identificazione dell'utente e la memorizzazione della soluzione generata proceduralmente (la password di root) avverranno tramite la variabile superglobale $\_SESSION. Questo richiede l'uso di session\_start() all'inizio di ogni script PHP coinvolto. Solo il server deciderà le condizioni di vittoria confrontando l'input dell'utente con il dato in sessione.  Stato Client (Vanilla JS): Per mantenere in memoria lo stato dell'interfaccia (es. tempo rimanente del timer, finestre aperte) rispettando il vincolo del minor numero possibile di variabili globali, si utilizzeranno moduli JavaScript (ES6) o chiusure (Closures / IIFE).
 
 
 
@@ -182,7 +180,7 @@ L'Algoritmo dei Puzzle: La logica esatta con cui PHP genererà i puzzle (i rand(
 
 Animazioni UI: Se implementare o meno un finto caricamento del boot del sistema; lo decideremo affinando os.php e desktop.css.
 
-
+##### 
 
 ##### **4. Strutturazione della Roadmap di Implementazione**
 
@@ -241,4 +239,16 @@ La fase finale dedicata a spuntare tutti i requisiti di valutazione del professo
 3. Code Review \& Portabilità: Verifica che non ci siano percorsi assoluti, che i nomi delle variabili siano sostantivi e le funzioni verbi.
 4. Export DB: Utilizzo rigoroso dello script EsportaDB.bat o EsportaDB.sh fornito dal corso per generare il file .sql finale.
 5. Test sui Browser Ufficiali: Esecuzione del test funzionale su Firefox e Chrome usando l'ambiente software del corso.
+
+
+
+
+
+
+
+
+
+
+
+
 
