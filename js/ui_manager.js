@@ -70,12 +70,55 @@ function creaFinestraBase(appId, titoloApp) {
     document.getElementById('windows-container').appendChild(finestra);
     finestreAperte.push(appId);
 
-    //IL RITARDO
+    //RITARDO E POPOLAZIONE DATI
     setTimeout(() => {
-        // Qui poi inseriremo la funzione che inietta i dati JSON veri
-        contenuto.innerHTML = `<p>Contenuto decriptato di ${titoloApp} pronto.</p>`;
-    }, 1000);
+        if (appId === 'terminal') return;
 
+        contenuto.innerHTML = '';
+
+        if (!window.GameOS || !window.GameOS.isBooted || !window.GameOS.fileSystem) {
+            contenuto.innerHTML = '<p style="color:red;">ERRORE FATALE: File system non montato.</p>';
+            return;
+        }
+
+        const datiApp = window.GameOS.fileSystem[appId];
+
+        if (!datiApp || datiApp.length === 0) {
+            contenuto.innerHTML = '<p>Directory vuota.</p>';
+            return;
+        }
+
+        const lista = document.createElement('div');
+        lista.classList.add('app-list');
+
+        datiApp.forEach(item => {
+            const blocco = document.createElement('div');
+            blocco.classList.add('app-item');
+
+            const titolo = document.createElement('div');
+            titolo.classList.add('app-item-title');
+            titolo.innerText = '> ' + item.titolo;
+
+            const corpo = document.createElement('div');
+            corpo.classList.add('app-item-body');
+            corpo.innerHTML = item.testo.replace(/\n/g, '<br>'); 
+            
+            corpo.style.display = 'none'; 
+
+            titolo.addEventListener('click', () => {
+                const isNascosto = corpo.style.display === 'none';
+                corpo.style.display = isNascosto ? 'block' : 'none';
+                titolo.classList.toggle('title-active');
+            });
+
+            blocco.appendChild(titolo);
+            blocco.appendChild(corpo);
+            lista.appendChild(blocco);
+        });
+
+        contenuto.appendChild(lista);
+
+    }, 1000);
     return finestra;
 }
 
@@ -119,7 +162,7 @@ function inizializzaDesktop() {
             const appId = bottone.dataset.app;
 
             if(appId === 'terminal') {
-                console.log("Apertura terminale (da implementare separatamente)");
+                apriTerminale();
                 return;
             }
 

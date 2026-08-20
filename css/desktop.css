@@ -113,6 +113,11 @@ body#os-body {
     box-shadow: inset 0 0 15px rgba(0, 255, 65, 0.6);
 }
 
+.os-icon[data-app="terminal"].app-attiva {
+    background-color: rgba(0, 255, 255, 0.3);
+    box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
 .glitch-screen {
     animation: glitch-anim 0.2s 5;
     background-color: #4a0000 !important;
@@ -239,4 +244,112 @@ body#os-body {
 
 @keyframes blinker {
     50% { opacity: 0; }
+}
+
+/* 
+   STILE DEI CONTENUTI DINAMICI (LISTE)
+*/
+
+.app-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-item {
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.app-item-title {
+    padding: 8px;
+    background: rgba(0, 255, 65, 0.1);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+.app-item-title:hover {
+    background: rgba(0, 255, 65, 0.4);
+    color: #fff;
+}
+
+.app-item-title.title-active {
+    background: rgba(0, 255, 65, 0.6);
+    color: #000;
+}
+
+.app-item-body {
+    padding: 12px;
+    color: #b5ffc3; 
+    line-height: 1.4;
+    border-top: 1px dashed rgba(0, 255, 65, 0.3);
+}
+
+/* 
+   STILE DEL TERMINALE (ROOT_TERM)
+*/
+
+.terminal-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#term-output {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.term-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: #ff3333; 
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+#term-input {
+    background: transparent;
+    border: none;
+    color: #00ff41;
+    font-family: inherit;
+    font-size: inherit;
+    flex-grow: 1; 
+    outline: none; 
+}
+
+#term-input:focus {
+    outline: none;
+}
+
+/* 
+   TEMA SPECIFICO PER IL TERMINAL
+*/
+
+.sys-window.terminal-theme {
+    border-color: #00ffff; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+}
+
+.sys-window.terminal-theme .window-header {
+    background-color: rgba(0, 255, 255, 0.15);
+    border-bottom-color: #00ffff;
+}
+
+.sys-window.terminal-theme .btn-ctrl {
+    color: #00ffff;
+}
+
+.sys-window.terminal-theme .window-content {
+    background: linear-gradient(rgba(0,0,0,0) 50%, rgba(0, 255, 255, 0.02) 50%);
+    background-size: 100% 4px;
+}
+
+.sys-window.terminal-theme #term-input {
+    color: #00ffff;
 }

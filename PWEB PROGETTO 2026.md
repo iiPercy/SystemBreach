@@ -219,7 +219,7 @@ Lasciamo temporaneamente il frontend per concentrarci sulla logica "invisibile",
 
 
 
-**🚩 Milestone 4: Il Sistema Nervoso (Integrazione e Gameplay)**
+###### **🚩 Milestone 4: Il Sistema Nervoso (Integrazione e Gameplay)**
 
 Ora uniamo il frontend al backend. Il gioco prende vita.
 
@@ -241,8 +241,22 @@ La fase finale dedicata a spuntare tutti i requisiti di valutazione del professo
 5. Test sui Browser Ufficiali: Esecuzione del test funzionale su Firefox e Chrome usando l'ambiente software del corso.
 
 
+Requisiti Should Have:
+
+Textarea nelle notes
 
 
+Requisiti Could Have:
+
+App alcolatrice
+
+Barra di caricamento nel timer
+
+Effetti audio
+
+Fake boot sequence prima di mostrare il desktop
+
+Comandi nascosti nel terminale
 
 
 
