@@ -21,7 +21,12 @@ if (!isset($_SESSION['user_id'])) {
 
     <header id="hud-top">
         <div class="warning-text">SYSTEM PURGE INITIATED</div>
-        <div id="timer-display">05:00</div>
+        <div id="timer-wrapper">
+            <div id="timer-display">05:00</div>
+            <div id="timer-progress-bg">
+                <div id="timer-progress-fill"></div>
+            </div>
+        </div>
     </header>
 
     <main id="desktop-area">

@@ -22,10 +22,18 @@ body#os-body {
 
 .warning-text {
     color: #ff003c;
-    font-size: 1rem;
-    letter-spacing: 5px;
+    font-size: 1.6rem; 
+    font-weight: bold; 
+    letter-spacing: 8px;
     text-transform: uppercase;
-    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.6);
+    animation: slow-pulse 2s infinite alternate; 
+}
+
+
+@keyframes slow-pulse {
+    from { opacity: 0.6; text-shadow: 0 0 5px rgba(255, 0, 60, 0.3); }
+    to { opacity: 1; text-shadow: 0 0 15px rgba(255, 0, 60, 0.9); }
 }
 
 #timer-display {
@@ -352,4 +360,53 @@ body#os-body {
 
 .sys-window.terminal-theme #term-input {
     color: #00ffff;
+}
+
+/* 
+   TIMER DI GIOCO E BARRA PROGRESSO
+*/
+
+#timer-wrapper {
+    margin: 15px auto 5px auto; 
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 8px; 
+    width: 450px;
+}
+
+#timer-display {
+    font-size: 2.2rem; 
+    font-weight: bold;
+    color: #ff3333; 
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.8);
+    letter-spacing: 3px;
+    text-align: center;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+#timer-progress-bg {
+    width: 100%;
+    height: 6px; 
+    background-color: rgba(255, 51, 51, 0.15);
+    border: 1px solid rgba(255, 51, 51, 0.4);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
+    box-sizing: border-box; 
+}
+
+#timer-progress-fill {
+    width: 100%;
+    height: 100%;
+    background-color: #ff3333; 
+    box-shadow: 0 0 8px #ff3333;
+    transition: width 1s linear, background-color 0.3s; 
+}
+
+
+#timer-wrapper.timer-critical #timer-display,
+#timer-wrapper.timer-critical #timer-progress-fill {
+    animation: blinker 0.8s linear infinite;
+    text-shadow: 0 0 20px #ff0000;
+    box-shadow: 0 0 15px #ff0000;
 }

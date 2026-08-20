@@ -35,7 +35,9 @@ async function bootSystem() {
 
         console.log("[KERNEL] Boot completato. File system caricato in memoria.");
         
-        // Qui potremmo far partire il timer ufficiale della partita (lo faremo poi in timer.js)
+        if (typeof avviaTimer === 'function') {
+            avviaTimer();
+        }
         
     } catch (error) {
         console.error("[KERNEL] PANIC: Impossibile comunicare col server.", error);

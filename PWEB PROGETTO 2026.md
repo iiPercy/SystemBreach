@@ -241,12 +241,15 @@ La fase finale dedicata a spuntare tutti i requisiti di valutazione del professo
 5. Test sui Browser Ufficiali: Esecuzione del test funzionale su Firefox e Chrome usando l'ambiente software del corso.
 
 
-Requisiti Should Have:
+- Requisiti Should Have:
+
+Più file .css
 
 Textarea nelle notes
 
+Num max di tentativi
 
-Requisiti Could Have:
+- Requisiti Could Have:
 
 App alcolatrice
 
@@ -258,6 +261,7 @@ Fake boot sequence prima di mostrare il desktop
 
 Comandi nascosti nel terminale
 
+Tentativo errato toglie del tempo
 
 
 
