@@ -43,7 +43,7 @@ async function triggerGameOver() {
     document.getElementById('os-body').classList.add('glitch-screen');
 
     try {
-        await fetch('php/timeout.php');
+        await fetch('backend/timeout.php');
     } catch (e) {
         console.error("Errore di rete durante il timeout.");
     }

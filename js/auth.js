@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const datiOggetto = Object.fromEntries(datiModulo.entries());
 
         try {
-            const risposta = await fetch('php/login_handler.php', {
+            const risposta = await fetch('backend/login_handler.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json' 

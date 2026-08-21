@@ -1,5 +1,5 @@
 <?php
-// php/verifica_terminale.php
+// backend/verifica_terminale.php
 
 session_start();
 header('Content-Type: application/json');

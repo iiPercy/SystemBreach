@@ -1,5 +1,5 @@
 <?php
-// php/genera_enigma.php
+// backend/genera_enigma.php
 
 session_start();
 header('Content-Type: application/json');

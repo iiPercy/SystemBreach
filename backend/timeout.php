@@ -1,5 +1,5 @@
 <?php
-// php/timeout.php
+// backend/timeout.php
 session_start();
 
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['partita_attiva'])) {

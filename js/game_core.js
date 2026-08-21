@@ -12,7 +12,7 @@ async function bootSystem() {
     console.log("[KERNEL] Inizio sequenza di boot...");
 
     try {
-        const response = await fetch('php/genera_enigma.php');
+        const response = await fetch('backend/genera_enigma.php');
         
         if (!response.ok) {
             throw new Error(`Errore HTTP: ${response.status}`);
