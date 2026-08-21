@@ -76,8 +76,7 @@ async function verificaPassword(tentativo, inputField, outputDiv) {
         if (data.esito === 'VITTORIA') {
             outputDiv.innerHTML += `<div style="color: #00ff41; font-weight: bold;">[!] ACCESSO CONSENTITO. Override di sistema accettato.</div>`;
             setTimeout(() => {
-                alert("HAI VINTO! Sistema sbloccato.");
-                window.location.href = 'index.php'; 
+                window.location.href = 'esito.php?id=' + window.GameOS.matchId;
             }, 2000);
         } else {
             outputDiv.innerHTML += `<div style="color: #ff3333; font-weight: bold;">[X] ACCESSO NEGATO. Password errata.</div>`;

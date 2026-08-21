@@ -49,7 +49,6 @@ async function triggerGameOver() {
     }
 
     setTimeout(() => {
-        alert("TEMPO SCADUTO. La traccia è stata persa. Disconnessione in corso...");
-        window.location.href = 'index.php'; 
+        window.location.href = 'esito.php?id=' + window.GameOS.matchId;
     }, 1500);
 }

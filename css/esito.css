@@ -1,0 +1,92 @@
+/* css/esito.css */
+
+/*DEFINIZIONE DEI TEMI*/
+.theme-win {
+    --tema-colore: #00ff41;
+    --tema-sfondo: rgba(0, 255, 65, 0.1);
+}
+
+.theme-lose {
+    --tema-colore: #ff003c;
+    --tema-sfondo: rgba(255, 0, 60, 0.1);
+}
+
+/*STILE BASE DELLA PAGINA */
+body.theme-win, body.theme-lose {
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-image: 
+        linear-gradient(rgba(0, 255, 65, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 65, 0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/*RIQUADRO CENTRALE */
+.esito-box {
+    text-align: center;
+    padding: 50px;
+    border: 2px solid var(--tema-colore);
+    background-color: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 30px var(--tema-colore);
+    animation: fadeIn 1s ease-in-out;
+    max-width: 600px;
+    width: 100%;
+}
+
+.esito-box h1 {
+    color: var(--tema-colore);
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px var(--tema-colore);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.esito-box p {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/*BOTTONI */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: var(--tema-colore);
+    border: 1px solid var(--tema-colore);
+    background: transparent;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-action.primary {
+    background-color: var(--tema-sfondo);
+}
+
+.btn-action:hover {
+    background-color: var(--tema-colore);
+    color: #000;
+    box-shadow: 0 0 20px var(--tema-colore);
+}
+
+/*ANIMAZIONE */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
